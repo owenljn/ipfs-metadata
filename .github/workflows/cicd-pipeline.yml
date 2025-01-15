@@ -22,7 +22,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+          aws-region: "us-east-1"
 
       # Set ECR Repo URL from GitHub secret
       - name: Set ECR Repo URL
@@ -32,7 +32,7 @@ jobs:
       # Log in to Amazon ECR
       - name: Login to Amazon ECR
         run: |
-          aws ecr get-login-password --region ${{ secrets.AWS_DEFAULT_REGION }} \
+          aws ecr get-login-password --region "us-east-1" \
           | docker login --username AWS --password-stdin "${{ steps.repo.outputs.ecr_url }}"
 
       # Build and push image to ECR
