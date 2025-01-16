@@ -7,6 +7,7 @@ variable "db_host" {}
 variable "db_name" {}
 variable "db_user" {}
 variable "db_password" {}
+variable "aws_region" {}
 variable "vpc_id" {}
 variable "public_subnets" {
   type = list(string)
@@ -156,6 +157,7 @@ resource "aws_ecs_task_definition" "this" {
       DB_NAME        = var.db_name
       DB_USER        = var.db_user
       DB_PASSWORD    = var.db_password
+      AWS_REGION     = var.aws_region
     }
   )
 }

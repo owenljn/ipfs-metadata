@@ -9,6 +9,14 @@
         "hostPort": ${CONTAINER_PORT}
       }
     ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/ipfs-app",
+        "awslogs-region": "${AWS_REGION}",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
     "environment": [
       { "name": "POSTGRES_HOST", "value": "${DB_HOST}" },
       { "name": "POSTGRES_PORT", "value": "5432" },
