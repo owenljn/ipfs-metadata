@@ -1,0 +1,20 @@
+[
+  {
+    "name": "ipfs-app",
+    "image": "${IMAGE_URL}",
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": ${CONTAINER_PORT},
+        "hostPort": ${CONTAINER_PORT}
+      }
+    ],
+    "environment": [
+      { "name": "POSTGRES_HOST", "value": "${DB_HOST}" },
+      { "name": "POSTGRES_PORT", "value": "5432" },
+      { "name": "POSTGRES_USER", "value": "${DB_USER}" },
+      { "name": "POSTGRES_PASSWORD", "value": "${DB_PASSWORD}" },
+      { "name": "POSTGRES_DB", "value": "${DB_NAME}" }
+    ]
+  }
+]
