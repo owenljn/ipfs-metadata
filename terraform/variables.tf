@@ -34,7 +34,7 @@ variable "db_password" {
 
 variable "db_name" {
   type    = string
-  default = "ipfsdb"
+  default = "postgres"
 }
 
 variable "ecr_repository_url" {
