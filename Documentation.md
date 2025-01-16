@@ -13,7 +13,7 @@
   And when it confirms working, run: terraform apply -auto-approve -var="aws_region=us-east-1"   -var="db_username=blockparty_user"   -var="db_password=blockparty_password"   -var="ecr_repository_url=590331242805.dkr.ecr.us-east-1.amazonaws.com/blockparty"
 
 ## To test out the deployed app:
-  Go to this link in the browser: http://blockparty-env-alb-242732543.us-east-1.elb.amazonaws.com/metadata
+  Go to this link in the browser: http://blockparty-env-alb-460195511.us-east-1.elb.amazonaws.com/metadata
 
 ## Notes
   I use my own AWS account to create an IAM user, and uses its Access key and passwords as GitHub Action secrets, the aws region used is us-east-1, during the deployment, I decided to use a dedicated RDS for postgresql service instead of packing it with the container as this is more of the best practice.
